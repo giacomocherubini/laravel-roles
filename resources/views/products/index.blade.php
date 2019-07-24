@@ -10,8 +10,19 @@
         <th>Marca</th>
         <th>Description</th>
         <th>Price</th>
-
       </thead>
+      <tbody>
+        @forelse ($products as $product)
+          <tr>
+            <td>{{ $product->id }}</td>
+            <td>{{ $product->marca }}</td>
+            <td>{{ $product->description }}</td>
+            <td>{{ $product->price }}</td>
+          </tr>
+        @empty
+
+        @endforelse
+      </tbody>
     </table>
 
   </div>
